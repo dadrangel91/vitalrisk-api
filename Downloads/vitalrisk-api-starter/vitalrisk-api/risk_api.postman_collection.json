@@ -1,0 +1,58 @@
+{
+  "info": {
+    "name": "VitalRisk API",
+    "_postman_id": "e2f0c5b3-0000-4000-8000-000000000001",
+    "description": "Quick collection for testing VitalRisk",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Risk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"age\": 55, \"bmi\": 28.5, \"systolic_bp\": 138, \"smoker\": true, \"diabetic\": false}"
+        },
+        "url": {
+          "raw": "{{base_url}}/v1/risk",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "v1",
+            "risk"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
