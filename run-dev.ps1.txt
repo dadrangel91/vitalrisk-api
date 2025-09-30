@@ -1,0 +1,21 @@
+# run-dev.ps1
+# Script to start VitalRisk API locally
+
+Write-Host "=== Starting VitalRisk API ==="
+
+# Step 1: Activate virtual environment (creates if missing)
+if (-Not (Test-Path ".venv")) {
+    Write-Host "Creating virtual environment..."
+    py -m venv .venv
+}
+
+Write-Host "Activating venv..."
+. .\.venv\Scripts\Activate.ps1
+
+# Step 2: Install dependencies
+Write-Host "Installing requirements..."
+pip install -r requirements.txt
+
+# Step 3: Run API
+Write-Host "Launching Uvicorn server..."
+uvicorn app.main:app --reload

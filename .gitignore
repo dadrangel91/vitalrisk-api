@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+
+# Envs
+.venv/
+env/
+venv/
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Tests
+.pytest_cache/
+.coverage
+htmlcov/
