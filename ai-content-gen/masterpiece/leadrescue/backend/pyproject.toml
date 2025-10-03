@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leadrescue-backend"
+version = "0.1.0"
+description = "LeadRescue FastAPI backend"
+requires-python = ">=3.11"
+
+[project.dependencies]
+fastapi = "^0.101"
+uvicorn = {extras=["standard"], version="^0.23"}
+sqlmodel = "^0.0"
+httpx = "^0.24"
+python-dotenv = "^1.1"
+apscheduler = "^3.10"
+pytest = {version="^7.0", optional=true}
+
+[project.optional-dependencies]
+dev = ["pytest", "flake8"]
